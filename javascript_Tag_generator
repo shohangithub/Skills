@@ -1,0 +1,17 @@
+$(document).ready(function(){
+     $('<a href="https://www.google.com/">Click</a>').insertAfter('h2');
+   });
+   
+  
+   function addAnchorTag(){
+    const tags = document.getElementsByTagName('h2');
+    const indx = tags.length-1;
+     insertion(tags,indx);
+   }
+   function insertion(tags,indx) {
+      tags[indx].insertAdjacentHTML('afterend', '<a href="https://www.google.com/">Click</a>');
+
+      if(indx >= 0)  //check index
+      insertion(tags,indx-1); //call recursion
+    }
+    addAnchorTag();
